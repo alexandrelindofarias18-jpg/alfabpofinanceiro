@@ -42,12 +42,16 @@ export const Route = createFileRoute("/")({
         content: /IMG-20261118-WA0011.jpg)
       },
       { name: "twitter:card", content: "summary_large_image" },
+      {      {
+        property: "og:image",
+        content: "https://lovable.app",
+      },
+      { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:image",
         content: "https://lovable.app",
       },
 
-    ],
   }),
   component: Deck,
 });
