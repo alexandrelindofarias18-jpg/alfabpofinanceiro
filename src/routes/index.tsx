@@ -34,7 +34,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "ALFA — BPO financeiro para prestadores de serviço" },
       {
         property: "og:description",
-        content: "Você cuida dos clientes. A ALFA cuida do seu dinheiro.",
+        content: "Você cuida dos clientes. A ALFA cuida do seu negócio.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

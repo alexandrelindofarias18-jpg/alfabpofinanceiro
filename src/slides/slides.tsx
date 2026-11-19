@@ -41,7 +41,7 @@ export function CoverSlide() {
           <h1 className="slide-title-lg mt-10 font-display font-medium">
             Você cuida dos clientes.
             <br />
-            <span className="italic text-lime">A ALFA cuida do seu dinheiro.</span>
+            <span className="italic text-lime">A ALFA cuida do seu negócio.</span>
           </h1>
         </div>
         <p className="slide-body-lg max-w-[900px] text-paper/70">
