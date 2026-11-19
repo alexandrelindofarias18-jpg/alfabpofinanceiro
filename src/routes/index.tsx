@@ -236,4 +236,136 @@ function Deck() {
               size="icon"
               aria-label="Próximo slide"
               onClick={next}
-              disabled={ind
+              disabled={index === total - 1}
+              className="absolute right-3 top-1/2 hidden -translate-y-1/2 rounded-full md:inline-flex"
+            >
+              <ChevronRight />
+            </Button>
+          </div>
+
+          {/* Bottom nav (always visible, main nav on phones) */}
+          <div className="flex shrink-0 items-center justify-center gap-4 pb-3">
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label="Slide anterior"
+              onClick={prev}
+              disabled={index === 0}
+              className="md:hidden"
+            >
+              <ChevronLeft />
+            </Button>
+            <span className="text-sm tabular-nums text-muted-foreground">
+              {index + 1} / {total} · {slides[index]?.title}
+            </span>
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label="Próximo slide"
+              onClick={next}
+              disabled={index === total - 1}
+              className="md:hidden"
+            >
+              <ChevronRight />
+            </Button>
+          </div>
+
+          {notesOpen && (
+            <section className="max-h-48 shrink-0 overflow-y-auto border-t bg-card px-5 py-4">
+              <p className="text-xs font-bold uppercase tracking-widest text-primary">
+                Notas do apresentador
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-card-foreground/85">
+                {slides[index]?.notes}
+              </p>
+            </section>
+          )}
+        </main>
+      </div>
+
+      {/* WhatsApp flutuante */}
+      {!presenting && (
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Conversar com Alexandre no WhatsApp"
+          className="fixed bottom-5 right-5 z-30 flex items-center gap-2 rounded-full bg-lime px-5 py-3 text-sm font-bold text-ink-deep shadow-lg transition hover:scale-105"
+        >
+          <MessageCircle className="size-5" />
+          <span className="hidden sm:inline">Falar com Alexandre</span>
+        </a>
+      )}
+
+      {/* Grid view */}
+      {gridOpen && (
+        <div className="fixed inset-0 z-40 overflow-y-auto bg-background/95 p-4 backdrop-blur sm:p-8">
+          <div className="mb-6 flex items-center justify-between">
+            <h2 className="font-display text-2xl">Todos os slides</h2>
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label="Fechar"
+              onClick={() => setGridOpen(false)}
+            >
+              <X />
+            </Button>
+          </div>
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+            {slides.map((s, i) => (
+              <button
+                key={s.id}
+                onClick={() => {
+                  goTo(i);
+                  setGridOpen(false);
+                }}
+                className="text-left"
+              >
+                <ScaledSlide
+                  className={cn(
+                    "aspect-video w-full rounded-lg ring-2",
+                    i === index ? "ring-primary" : "ring-transparent hover:ring-border",
+                  )}
+                >
+                  <SlideView index={i} />
+                </ScaledSlide>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  <span className="tabular-nums text-foreground">{i + 1}.</span> {s.title}
+                </p>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Fullscreen presenting */}
+      {presenting && (
+        <div
+          className={cn("fixed inset-0 z-50 bg-stage", idle && "cursor-none")}
+          onMouseMove={wake}
+          {...swipe}
+        >
+          <ScaledSlide className="absolute inset-0">
+            <SlideView index={index} />
+          </ScaledSlide>
+          <button aria-label="Slide anterior" className="absolute inset-y-0 left-0 w-1/3" onClick={prev} />
+          <button aria-label="Próximo slide" className="absolute inset-y-0 right-0 w-2/3" onClick={next} />
+          <div
+            className={cn(
+              "absolute right-4 top-4 flex items-center gap-3 transition-opacity duration-500",
+              idle ? "opacity-0" : "opacity-100",
+            )}
+          >
+            <span className="rounded-full bg-secondary px-3 py-1 text-sm tabular-nums text-secondary-foreground">
+              {index + 1} / {total}
+            </span>
+            <Button variant="secondary" size="icon" aria-label="Sair da apresentação" onClick={stopPresenting}>
+              <X />
+            </Button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
