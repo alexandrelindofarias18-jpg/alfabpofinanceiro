@@ -42,12 +42,12 @@ export const Route = createFileRoute("/")({
       {
         property: "og:image",
         content: 
-          "https://i.postimg.cc/MZ7YWWCW/IMG-20261118-WA0011.jpg",
+          "https://raw.githubusercontent.com/alexandrelindofarias18-jpg/alfabpofinanceiro/refs/heads/main/public/IMG-20261118-WA0011.jpg?token=GHSAT0AAAAAAEQ6NNA5COHR7I2CBTHDZTL62X65CAQ",
       },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:image",
-        content: "https://i.postimg.cc/MZ7YWWCW/IMG-20261118-WA0011.jpg",
+        content: "",https://raw.githubusercontent.com/alexandrelindofarias18-jpg/alfabpofinanceiro/refs/heads/main/public/IMG-20261118-WA0011.jpg?token=GHSAT0AAAAAAEQ6NNA5COHR7I2CBTHDZTL62X65CAQ
       },
     ],
   }),
