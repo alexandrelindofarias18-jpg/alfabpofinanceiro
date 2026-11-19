@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- The sales deck lives in `src/slides/`: slides are components wrapping `SlideLayout`, registered in `registry.tsx`; restyle via the `--slide-*` / palette tokens in `src/styles.css` so every slide changes together.
+- Commercial terms (prices, brand) live only in `src/slides/offer.ts` and are covered by `src/test/offer.test.ts`, so slides and tests never drift apart.
+- Slides render at 1920x1080 and scale with `ScaledSlide`; the current slide is the `?slide=N` search param, and `/print` stacks all slides for PDF export.
