@@ -37,9 +37,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content: "Você cuida dos clientes. A ALFA cuida do seu negócio.",
-      },
-      { property: "og:type", content: "website" },
-      {
+      },      {
         property: "og:image",
         content: "https://lovable.app",
       },
@@ -48,6 +46,7 @@ export const Route = createFileRoute("/")({
         name: "twitter:image",
         content: "https://lovable.app",
       },
+
     ],
   }),
   component: Deck,
