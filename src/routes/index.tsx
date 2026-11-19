@@ -41,12 +41,12 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       {
         property: "og:image",
-        content: "https://lovable.app",
+        content: "https://raw.githubusercontent.com/alexandrelindofarias18-jpg/alfabpofinanceiro/refs/heads/main/public/IMG-20261118-WA0011.jpg?token=GHSAT0AAAAAAEQ6NNA4PQTLRTZNPDPMP4ZC2X63VOQ",
       },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:image",
-        content: "https://lovable.app",
+        content: "https://raw.githubusercontent.com/alexandrelindofarias18-jpg/alfabpofinanceiro/refs/heads/main/public/IMG-20261118-WA0011.jpg?token=GHSAT0AAAAAAEQ6NNA4PQTLRTZNPDPMP4ZC2X63VOQ",
       },
     ],
   }),
