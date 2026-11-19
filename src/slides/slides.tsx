@@ -1,6 +1,6 @@
 import {
   ArrowLeftRight,
-  AtSign,
+  User,
   BellRing,
   Check,
   Clock,
@@ -390,13 +390,13 @@ export function ClosingSlide() {
             <span className="flex size-14 items-center justify-center rounded-full bg-lime text-ink">
               <MessageCircle className="size-7" />
             </span>
-            [WhatsApp — substituir]
+            (67) 99309-6973
           </span>
           <span className="flex items-center gap-4">
             <span className="flex size-14 items-center justify-center rounded-full bg-lime text-ink">
-              <AtSign className="size-7" />
+              <User className="size-7" />
             </span>
-            [Instagram ou e-mail — substituir]
+            Fale com Alexandre
           </span>
         </div>
       </div>
