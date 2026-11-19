@@ -5,6 +5,7 @@ import {
   ChevronRight,
   Download,
   LayoutGrid,
+  MessageCircle,
   Play,
   StickyNote,
   X,
@@ -12,6 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ScaledSlide } from "@/slides/ScaledSlide";
+import { WHATSAPP_URL } from "@/slides/offer";
 import { SlideView, slides } from "@/slides/registry";
 import { AlfaMark } from "@/slides/SlideLayout";
 import { useSwipe } from "@/slides/useSwipe";
@@ -272,6 +274,20 @@ function Deck() {
           )}
         </main>
       </div>
+
+      {/* WhatsApp flutuante */}
+      {!presenting && (
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Conversar com Alexandre no WhatsApp"
+          className="fixed bottom-5 right-5 z-30 flex items-center gap-2 rounded-full bg-lime px-5 py-3 text-sm font-bold text-ink-deep shadow-lg transition hover:scale-105"
+        >
+          <MessageCircle className="size-5" />
+          <span className="hidden sm:inline">Falar com Alexandre</span>
+        </a>
+      )}
 
       {/* Grid view */}
       {gridOpen && (

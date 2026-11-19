@@ -1,6 +1,5 @@
 import {
   ArrowLeftRight,
-  User,
   BellRing,
   Check,
   Clock,
@@ -19,7 +18,7 @@ import {
 import capa from "@/assets/capa-prestador.jpg";
 import prestadores from "@/assets/prestadores.jpg";
 import { AlfaMark, SlideLayout } from "./SlideLayout";
-import { OFFER, formatBRL } from "./offer";
+import { OFFER, WHATSAPP_URL, formatBRL } from "./offer";
 
 function Kicker({ children, className = "text-ink-soft" }: { children: string; className?: string }) {
   return <p className={`slide-kicker ${className}`}>{children}</p>;
@@ -385,19 +384,17 @@ export function ClosingSlide() {
             Comece pelo diagnóstico por apenas {formatBRL(OFFER.setupFee)}.
           </p>
         </div>
-        <div className="slide-body flex gap-16">
-          <span className="flex items-center gap-4">
-            <span className="flex size-14 items-center justify-center rounded-full bg-lime text-ink">
-              <MessageCircle className="size-7" />
-            </span>
-            (67) 99309-6973
-          </span>
-          <span className="flex items-center gap-4">
-            <span className="flex size-14 items-center justify-center rounded-full bg-lime text-ink">
-              <User className="size-7" />
-            </span>
-            Fale com Alexandre
-          </span>
+        <div className="flex items-center gap-12">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="slide-body-lg flex items-center gap-5 rounded-full bg-lime px-12 py-7 font-bold text-ink transition hover:scale-[1.03]"
+          >
+            <MessageCircle className="size-10" strokeWidth={2.2} />
+            Chamar Alexandre no WhatsApp
+          </a>
+          <span className="slide-body text-paper/70">(67) 99309-6973</span>
         </div>
       </div>
     </SlideLayout>
