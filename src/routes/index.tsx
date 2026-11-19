@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
     const n = Number(search["slide"]);
     return Number.isInteger(n) && n >= 1 ? { slide: n } : {};
   },
-  head: () => ({
+head: () => ({
     meta: [
       { title: "ALFA — BPO financeiro para prestadores de serviço" },
       {
@@ -41,14 +41,17 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       {
         property: "og:image",
-        content: 
+        content:
           "https://raw.githubusercontent.com/alexandrelindofarias18-jpg/alfabpofinanceiro/refs/heads/main/public/IMG-20261118-WA0011.jpg",
       },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:image",
-        content: "https://raw.githubusercontent.com/alexandrelindofarias18-jpg/alfabpofinanceiro/refs/heads/main/public/IMG-20261118-WA0011.jpg",
+        content:
+          "https://raw.githubusercontent.com/alexandrelindofarias18-jpg/alfabpofinanceiro/refs/heads/main/public/IMG-20261118-WA0011.jpg",
       },
+    ],
+  }),
     ],
   }),
   component: Deck,
