@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
         content: "Você cuida dos clientes. A ALFA cuida do seu negócio.",
       },      {
         property: "og:image",
-        content: "https://lovable.app",
+        content: /IMG-20261118-WA0011.jpg)
       },
       { name: "twitter:card", content: "summary_large_image" },
       {
