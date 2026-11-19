@@ -47,7 +47,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:image",
-        content: "",https://raw.githubusercontent.com/alexandrelindofarias18-jpg/alfabpofinanceiro/refs/heads/main/public/IMG-20261118-WA0011.jpg?token=GHSAT0AAAAAAEQ6NNA5COHR7I2CBTHDZTL62X65CAQ
+        content: "https://raw.githubusercontent.com/alexandrelindofarias18-jpg/alfabpofinanceiro/refs/heads/main/public/IMG-20261118-WA0011.jpg?token=GHSAT0AAAAAAEQ6NNA5COHR7I2CBTHDZTL62X65CAQ",
       },
     ],
   }),
